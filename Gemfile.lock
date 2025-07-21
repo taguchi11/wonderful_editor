@@ -324,7 +324,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sass-rails (>= 6)
-  spring
+  spring (>= 4.2.1)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
