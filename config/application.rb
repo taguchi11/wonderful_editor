@@ -46,7 +46,6 @@ module WonderfulEditor
                    controller_specs: false,
                    request_specs: true
       end
-
     config.api_only = true
   end
 end
