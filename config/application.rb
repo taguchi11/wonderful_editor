@@ -34,7 +34,7 @@ module WonderfulEditor
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.generators do |g|
+    config.generators do |g|  
       g.template_engine false
       g.javascripts false
       g.stylesheets false
