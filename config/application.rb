@@ -34,12 +34,12 @@ module WonderfulEditor
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.generators do |g|  
-      g.template_engine false
-      g.javascripts false
-      g.stylesheets false
-      g.helper false
-      g.test_framework :rspec,
+    config.generators do |g|
+        g.template_engine false
+        g.javascripts false
+        g.stylesheets false
+        g.helper false
+        g.test_framework :rspec,
                    view_specs: false,
                    routing_specs: false,
                    helper_specs: false,
