@@ -43,7 +43,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop-rails"
   gem "rubocop-rspec"
-  gem "spring", ">= 4.2.1"
+  gem "spring", "4.2.1"
 end
 
 group :development do
