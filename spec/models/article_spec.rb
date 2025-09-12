@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe Article, type: :model do
   describe "articleモデルのテスト" do
-	  context "articleが登録できること" do
+	 context "articleが登録できること" do
 	    it "有効なarticleの場合は保存されるか" do
 	      expect(build(:article)).to be_valid
 	    end
@@ -13,7 +13,7 @@ RSpec.describe Article, type: :model do
         article.valid?
         expect(article.errors[:title]).to include("を入力してください")
       end
-    end
+   end
     context "文字数のバリデーションチェック" do
       it "titleの文字数が21文字以上の場合エラーメッセージが返ってくるか" do
         article = build(:article, title: "あいうえおあいうえおあいうえおあいうえおあ")
