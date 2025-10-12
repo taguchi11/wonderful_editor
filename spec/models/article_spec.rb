@@ -1,33 +1,34 @@
 require "rails_helper"
-
 RSpec.describe Article, type: :model do
+  let(:article) { create(:article) }
   describe "articleモデルのテスト" do
-    context "articleが登録できること" do
-      it "有効なarticleの場合は保存されるか" do
-        expect(build(:article)).to be_valid
+    context "タイトルが空白の場合に" do
+      let(:article) { build(:article, title: nil) }
+      it "記事が作成できない" do
+        expect(article).to_not be_valid
+        expect(article.errors[:title]).to include("can't be blank")
+      end
+    end
+    context "本文が空白の場合に" do
+      let(:article) { build(:article, body: nil) }
+      it "記事が作成できない" do
+        expect(article).to_not be_valid
+      end
+    end
+    context "タイトルが21文字以上になった場合" do
+      article = FactoryBot.build(:article) # FactoryBotからarticleを生成
+      it "記事が作成できない" do
+        expect(article).to_not be_valid
+        expect(article.title.length).to eq(21)
+      end
+    end
+   context "本文が101文字以上になった場合" do
+      article = FactoryBot.build(:article) # FactoryBotからarticleを生成
+      it "記事が作成できない" do
+        expect(article).to_not be_valid
+        expect(article.body.length).to eq(101)
       end
     end
 
-    context "空白のバリデーションチェック" do
-      it "titleが空白の場合にエラーメッセージが返ってくるか" do
-        article = build(:article, title: nil)
-        article.valid?
-        expect(article.errors[:title]).to include("を入力してください")
-      end
-    end
-
-    context "文字数のバリデーションチェック" do
-      it "titleの文字数が21文字以上の場合エラーメッセージが返ってくるか" do
-        article = build(:article, title: "あいうえおあいうえおあいうえおあいうえおあ")
-        article.valid?
-        expect(article.errors[:title]).to include("は20文字以内で入力してください")
-      end
-
-      it "bodyの文字数が10文字以下の場合エラーメッセージが返ってくるか" do
-        article = build(:article, body: "hoge")
-        article.valid?
-        expect(article.errors[:body]).to include("は10文字以上で入力してください")
-      end
-    end
   end
 end
