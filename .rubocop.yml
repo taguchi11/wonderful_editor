@@ -12,3 +12,6 @@ AllCops:
 Style/SymbolProc:
   Exclude:
     - 'db/migrate/*'
+
+RSpec/MultipleExpectations:
+  Enabled: false
