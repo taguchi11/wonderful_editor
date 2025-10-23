@@ -11,14 +11,13 @@ module V1
     end
 
     def create
-      article = Article.create(article_params)
+      article = Article.create!(article_params)
       render json: article
     end
 
     private
-
-    def article_params
-      params.require(:article).permit(:title, :body)
-    end
+      def article_params
+        params.require(:article).permit(:title, :body)
+      end
   end
 end
