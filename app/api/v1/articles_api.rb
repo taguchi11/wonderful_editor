@@ -15,7 +15,7 @@ module V1
       render json: article
     end
 
-    private
+     private 
       def article_params
         params.require(:article).permit(:title, :body)
       end
