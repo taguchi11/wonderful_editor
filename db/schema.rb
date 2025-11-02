@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2025_10_06_150327) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "user_id"
-    t.index ["user_id"], unique: true
     t.string "article_id"
   end
 
@@ -36,7 +35,6 @@ ActiveRecord::Schema.define(version: 2025_10_06_150327) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "user_id"
-    t.index ["user_id"], unique: true
     t.string "article_id"
   end
 
@@ -57,7 +55,6 @@ ActiveRecord::Schema.define(version: 2025_10_06_150327) do
     t.string "provider"
     t.string "reset_password_token"
     t.string "user_id"
-    t.index ["name"], unique: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
