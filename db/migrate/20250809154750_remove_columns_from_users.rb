@@ -1,7 +1,9 @@
 class RemoveColumnsFromUsers < ActiveRecord::Migration[6.1]
   def change
-    remove_column :users, :uid, :string
-    remove_column :users, :encrypted_password, :string
-    remove_column :users, :reset_password_token, :string
+    change_table :users, bulk: true do |t|
+      t.string :users, :encrypted_password
+      t.string :users, :encrypted_password
+      t.string :users, :reset_password_token
+    end
   end
 end
