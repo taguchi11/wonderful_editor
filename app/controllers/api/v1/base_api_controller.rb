@@ -3,6 +3,8 @@ module Api
     class BaseApiController < ApplicationController
       def index
       end
+      def show
+      end
     end
   end
 end

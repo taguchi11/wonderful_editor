@@ -5,6 +5,20 @@ module Api
         articles = Article.all
         render json: articles, status: :ok
       end
+
+      def show
+        article = Article.new(@article)
+        render json: article, status: :ok
+      end
+
+      private
+
+        def set_article
+          binding.pry
+          @article = Article.find(params[:id])
+          binding.pry
+        end
+
     end
   end
 end
