@@ -15,11 +15,8 @@ module Api
       private
 
         def set_article
-          binding.pry
           @article = Article.find(params[:id])
-          binding.pry
         end
-
-    end
+      end
   end
 end
